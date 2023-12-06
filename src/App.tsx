@@ -1,25 +1,90 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import UserCard from './components/UserCard';
+export interface PendingId{
+   id : number
+  fields :{title : string ,value : string | number}[]
+  idFront : string
+  idBack : string
+}
 
 function App() {
+
+  const pendingIds : PendingId[] =[{
+    id : 1,
+    fields :  [{
+    title :'Name',
+    value :'Samia'
+  },
+{
+    title :'Job',
+    value :'Career'
+  },
+{
+    title :'Name',
+    value :'Samia'
+  },
+{
+    title :'Job',
+    value :'Career'
+  }],
+  idFront :"https://imgv3.fotor.com/images/blog-richtext-image/a-woman-in-black-suit.jpg",
+  idBack:"https://imgv3.fotor.com/images/blog-richtext-image/a-woman-in-black-suit.jpg"
+  },
+{
+    id : 2,
+    fields :  [{
+    title :'Name',
+    value :'Samia'
+  },
+{
+    title :'Job',
+    value :'Career'
+  }],
+  idFront :"https://imgv3.fotor.com/images/blog-richtext-image/a-woman-in-black-suit.jpg",
+  idBack:"https://imgv3.fotor.com/images/blog-richtext-image/a-woman-in-black-suit.jpg"
+  },
+{
+    id : 3,
+    fields :  [{
+    title :'Name',
+    value :'Samia'
+  },
+{
+    title :'Job',
+    value :'Career'
+  },
+{
+    title :'Name',
+    value :'Samia'
+  },
+{
+    title :'Job',
+    value :'Career'
+  }],
+  idFront :"https://imgv3.fotor.com/images/blog-richtext-image/a-woman-in-black-suit.jpg",
+  idBack:"https://imgv3.fotor.com/images/blog-richtext-image/a-woman-in-black-suit.jpg"
+  },
+{
+    id : 4,
+    fields :  [{
+    title :'Name',
+    value :'Samia'
+  },
+{
+    title :'Job',
+    value :'Career'
+  }],
+  idFront :"https://imgv3.fotor.com/images/blog-richtext-image/a-woman-in-black-suit.jpg",
+  idBack:"https://imgv3.fotor.com/images/blog-richtext-image/a-woman-in-black-suit.jpg"
+  }]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>  <div className='header'><img src="images/logo.jpg" alt="" className='header__image' /></div>
+  <div className='users__content'>
+    {pendingIds.map((pendingId)=> <UserCard key={pendingId.id}  pendingId={pendingId}></UserCard>)}
+  
+  
+  </div></>
   );
 }
 
